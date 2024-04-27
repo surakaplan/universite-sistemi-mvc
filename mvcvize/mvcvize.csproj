@@ -135,6 +135,7 @@
     <Compile Include="Controllers\ogrencilerController.cs" />
     <Compile Include="Controllers\personelController.cs" />
     <Compile Include="Controllers\raporlarController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -169,6 +170,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\raporlar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -272,11 +276,13 @@
     <Content Include="Views\raporlar\Details.cshtml" />
     <Content Include="Views\raporlar\Edit.cshtml" />
     <Content Include="Views\raporlar\Index.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Raporlar.cshtml" />
     <Content Include="Views\Home\Mezunlar.cshtml" />
+    <Content Include="Views\Users\login.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Account\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
     <Content Include="Content\bootstrap.rtl.css.map" />

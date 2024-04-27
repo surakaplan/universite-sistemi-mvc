@@ -11,6 +11,7 @@
         <EntityTypeShape EntityType="Database1Model.raporlar" Width="1.5" PointX="7.125" PointY="3.5" />
         <EntityTypeShape EntityType="Database1Model.ogrenciler" Width="1.5" PointX="1.875" PointY="0.5" />
         <EntityTypeShape EntityType="Database1Model.mezunlar" Width="1.5" PointX="4.75" PointY="3.375" />
+        <EntityTypeShape EntityType="Database1Model.Users" Width="1.5" PointX="0.5" PointY="3.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

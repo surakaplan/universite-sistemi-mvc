@@ -1,0 +1,63 @@
+﻿@model IEnumerable<mvcvize.Models.Users>
+
+@{
+    ViewBag.Title = "login";
+}
+
+<h2>Giriş Yap</h2>
+@ViewBag.ErrorMessage
+
+@using (Html.BeginForm("Login", "Users", FormMethod.Post))
+{
+    <div>
+        <label for="username">Kullanıcı Adı:</label>
+        <input type="text" name="username" id="username" />
+    </div>
+    <div>
+        <label for="password">Şifre:</label>
+        <input type="password" name="password" id="password" />
+    </div>
+    <button type="submit">Giriş Yap</button>
+}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #e9e9f4;
+    }
+
+    h2 {
+        color: #e7024e;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button[type="submit"] {
+        background-color: #e7024e;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+        button[type="submit"]:hover {
+            background-color: #d60045;
+        }
+
+    div {
+        margin-bottom: 15px;
+    }
+</style>

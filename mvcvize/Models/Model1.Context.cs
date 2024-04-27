@@ -31,5 +31,6 @@ namespace mvcvize.Models
         public virtual DbSet<raporlar> raporlar { get; set; }
         public virtual DbSet<ogrenciler> ogrenciler { get; set; }
         public virtual DbSet<mezunlar> mezunlar { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }
