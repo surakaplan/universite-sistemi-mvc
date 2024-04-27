@@ -45,9 +45,13 @@
                     @Html.DisplayFor(modelItem => item.ogrencipuan)
                 </td>
                 <td>
-                    @Html.ActionLink("Düzenle", "Edit","Ogrenciler", new { id = item.Id }, null) |
+                    @Html.ActionLink("Düzenle", "Edit", "Ogrenciler", new { id = item.Id }, null) |
                     @Html.ActionLink("Detaylar", "Details", "Ogrenciler", new { id = item.Id }, null) |
-                    @Html.ActionLink("Sil", "Delete", "Ogrenciler", new { id = item.Id }, null)
+                    @Html.ActionLink("Sil", "Delete", "Ogrenciler", new { id = item.Id }, null) |
+                    <form method="post" action="@Url.Action("MezunEt", "Ogrenciler")">
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <input type="submit" value="Mezun Et" onclick="return confirm('Bu öğrenciyi mezun etmek istediğinize emin misiniz?')" />
+                    </form>
                 </td>
             </tr>
         }

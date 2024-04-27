@@ -16,6 +16,7 @@ namespace mvcvize.Models
     {
         public int Id { get; set; }
         public string mezunad { get; set; }
+        public Nullable<int> mezunno { get; set; }
         public string mezunbolum { get; set; }
         public Nullable<int> mezunpuan { get; set; }
     }

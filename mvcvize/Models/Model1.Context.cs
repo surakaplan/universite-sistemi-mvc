@@ -29,7 +29,7 @@ namespace mvcvize.Models
         public virtual DbSet<akademisyenler> akademisyenler { get; set; }
         public virtual DbSet<birimler> birimler { get; set; }
         public virtual DbSet<personel> personel { get; set; }
-        public virtual DbSet<mezunlar> mezunlar { get; set; }
         public virtual DbSet<raporlar> raporlar { get; set; }
+        public virtual DbSet<mezunlar> mezunlar { get; set; }
     }
 }

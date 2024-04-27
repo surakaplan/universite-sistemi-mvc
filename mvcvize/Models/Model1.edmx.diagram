@@ -9,8 +9,8 @@
         <EntityTypeShape EntityType="Database1Model.akademisyenler" Width="1.5" PointX="8.25" PointY="0.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Database1Model.birimler" Width="1.5" PointX="2.5" PointY="3.5" />
         <EntityTypeShape EntityType="Database1Model.personel" Width="1.5" PointX="4.75" PointY="0.875" />
-        <EntityTypeShape EntityType="Database1Model.mezunlar" Width="1.5" PointX="5" PointY="3.5" />
         <EntityTypeShape EntityType="Database1Model.raporlar" Width="1.5" PointX="7.125" PointY="3.5" />
+        <EntityTypeShape EntityType="Database1Model.mezunlar" Width="1.5" PointX="4.5" PointY="3.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
