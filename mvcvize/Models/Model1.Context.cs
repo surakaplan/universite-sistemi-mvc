@@ -25,11 +25,11 @@ namespace mvcvize.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ogrenciler> ogrenciler { get; set; }
         public virtual DbSet<akademisyenler> akademisyenler { get; set; }
         public virtual DbSet<birimler> birimler { get; set; }
         public virtual DbSet<personel> personel { get; set; }
         public virtual DbSet<raporlar> raporlar { get; set; }
+        public virtual DbSet<ogrenciler> ogrenciler { get; set; }
         public virtual DbSet<mezunlar> mezunlar { get; set; }
     }
 }

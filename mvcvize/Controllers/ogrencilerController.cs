@@ -123,6 +123,39 @@ namespace mvcvize.Controllers
             }
             base.Dispose(disposing);
         }
+        [HttpPost]
+        public ActionResult MezunEt(int id)
+        {
+            // Öğrenciyi veritabanından bul
+            var ogrenci = db.ogrenciler.FirstOrDefault(o => o.Id == id);
+
+            // Öğrenci bulunamadıysa veya zaten mezun edilmişse
+            if (ogrenci == null || ogrenci.MezunMu == true)
+            {
+                return HttpNotFound(); // veya uygun bir hata sayfasına yönlendirme yapılabilir
+            }
+
+            // Öğrenciyi mezun et ve değişiklikleri kaydet
+            ogrenci.MezunMu = true; // Mezun olma durumunu true yapabilirsiniz
+
+            // Mezunlar tablosuna ekleme
+            var mezun = new mezunlar
+            {
+                mezunad = ogrenci.ogrenciad,
+                mezunno = ogrenci.ogrencino,
+                mezunbolum = ogrenci.ogrencibolum,
+                mezunpuan = ogrenci.ogrencipuan
+            };
+            db.mezunlar.Add(mezun);
+
+            // Öğrenciyi öğrenciler tablosundan sil
+            db.ogrenciler.Remove(ogrenci);
+
+            // Değişiklikleri kaydet
+            db.SaveChanges();
+
+            return RedirectToAction("Index"); // Öğrenci listesi sayfasına yönlendir
+        }
 
     }
 

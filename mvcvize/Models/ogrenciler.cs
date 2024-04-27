@@ -18,6 +18,7 @@ namespace mvcvize.Models
         public string ogrenciad { get; set; }
         public Nullable<int> ogrencino { get; set; }
         public string ogrencibolum { get; set; }
-        public string ogrencipuan { get; set; }
+        public Nullable<int> ogrencipuan { get; set; }
+        public Nullable<bool> MezunMu { get; set; }
     }
 }

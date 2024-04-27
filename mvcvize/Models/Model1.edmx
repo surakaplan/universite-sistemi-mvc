@@ -40,7 +40,8 @@
           <Property Name="ogrenciad" Type="varchar" MaxLength="50" />
           <Property Name="ogrencino" Type="int" />
           <Property Name="ogrencibolum" Type="varchar" MaxLength="50" />
-          <Property Name="ogrencipuan" Type="varchar" MaxLength="50" />
+          <Property Name="ogrencipuan" Type="int" />
+          <Property Name="MezunMu" Type="bit" />
         </EntityType>
         <EntityType Name="personel">
           <Key>
@@ -71,22 +72,12 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="ogrenciler">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ogrenciad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ogrencino" Type="Int32" />
-          <Property Name="ogrencibolum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ogrencipuan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ogrenciler" EntityType="Self.ogrenciler" />
           <EntitySet Name="akademisyenler" EntityType="Database1Model.akademisyenler" />
           <EntitySet Name="birimler" EntityType="Database1Model.birimler" />
           <EntitySet Name="personel" EntityType="Database1Model.personel" />
           <EntitySet Name="raporlar" EntityType="Database1Model.raporlar" />
+          <EntitySet Name="ogrenciler" EntityType="Database1Model.ogrenciler" />
           <EntitySet Name="mezunlar" EntityType="Database1Model.mezunlar" />
         </EntityContainer>
         <EntityType Name="akademisyenler">
@@ -123,6 +114,17 @@
           <Property Name="raporkonu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="raporicerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="ogrenciler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ogrenciad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ogrencino" Type="Int32" />
+          <Property Name="ogrencibolum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ogrencipuan" Type="Int32" />
+          <Property Name="MezunMu" Type="Boolean" />
+        </EntityType>
         <EntityType Name="mezunlar">
           <Key>
             <PropertyRef Name="Id" />
@@ -139,17 +141,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
-          <EntitySetMapping Name="ogrenciler">
-            <EntityTypeMapping TypeName="Database1Model.ogrenciler">
-              <MappingFragment StoreEntitySet="ogrenciler">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="ogrenciad" ColumnName="ogrenciad" />
-                <ScalarProperty Name="ogrencino" ColumnName="ogrencino" />
-                <ScalarProperty Name="ogrencibolum" ColumnName="ogrencibolum" />
-                <ScalarProperty Name="ogrencipuan" ColumnName="ogrencipuan" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="akademisyenler">
             <EntityTypeMapping TypeName="Database1Model.akademisyenler">
               <MappingFragment StoreEntitySet="akademisyenler">
@@ -184,6 +175,18 @@
               <MappingFragment StoreEntitySet="raporlar">
                 <ScalarProperty Name="raporicerik" ColumnName="raporicerik" />
                 <ScalarProperty Name="raporkonu" ColumnName="raporkonu" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ogrenciler">
+            <EntityTypeMapping TypeName="Database1Model.ogrenciler">
+              <MappingFragment StoreEntitySet="ogrenciler">
+                <ScalarProperty Name="MezunMu" ColumnName="MezunMu" />
+                <ScalarProperty Name="ogrencipuan" ColumnName="ogrencipuan" />
+                <ScalarProperty Name="ogrencibolum" ColumnName="ogrencibolum" />
+                <ScalarProperty Name="ogrencino" ColumnName="ogrencino" />
+                <ScalarProperty Name="ogrenciad" ColumnName="ogrenciad" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
