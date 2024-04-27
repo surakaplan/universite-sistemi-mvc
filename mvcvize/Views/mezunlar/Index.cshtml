@@ -1,0 +1,55 @@
+﻿@model IEnumerable<mvcvize.Models.mezunlar>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Mezun Öğrenci Listesi</h2>
+
+<p>
+    @Html.ActionLink("Mezun Öğrenci Ekle", "Create", "mezunlar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.mezunad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mezunbolum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mezunpuan)
+        </th>
+        <th></th>
+    </tr>
+
+
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mezunad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mezunbolum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mezunpuan)
+                </td>
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", "mezunlar", new { id = item.Id }, null) |
+                    @Html.ActionLink("Detaylar", "Details", "mezunlar", new { id = item.Id }, null) |
+                    @Html.ActionLink("Sil", "Delete", "mezunlar", new { id = item.Id }, null)
+                </td>
+            </tr>
+        }
+    }
+
+    else
+    {
+        <p>Veri bulunamadı.</p>
+    }
+
+</table>

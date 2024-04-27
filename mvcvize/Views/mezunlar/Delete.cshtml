@@ -1,0 +1,51 @@
+﻿@model mvcvize.Models.mezunlar
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Mezun Öğerenci Sil</h2>
+
+<h5>Mezun öğrenciyi silmek istediğinizden emin misiniz?</h5>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.mezunad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mezunad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mezunbolum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mezunbolum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mezunpuan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mezunpuan)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <br />
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-outline-danger" />
+
+        </div>
+    }
+    <br />
+    @Html.ActionLink("Listeye geri dön", "Index")
+</div>

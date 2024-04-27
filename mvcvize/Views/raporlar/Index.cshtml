@@ -1,0 +1,47 @@
+﻿@model IEnumerable<mvcvize.Models.raporlar>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Raporlar</h2>
+
+<p>
+    @Html.ActionLink("Rapor Ekle", "Create", "raporlar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.raporkonu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.raporicerik)
+        </th>
+        <th></th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.raporkonu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.raporicerik)
+                </td>
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", "raporlar", new { id = item.Id }, null) |
+                    @Html.ActionLink("Detaylar", "Details", "raporlar", new { id = item.Id }, null) |
+                    @Html.ActionLink("Sil", "Delete", "raporlar", new { id = item.Id }, null)
+                </td>
+            </tr>
+        }
+    }
+
+    else
+    {
+        <p>Veri bulunamadı.</p>
+    }
+
+</table>

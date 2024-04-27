@@ -1,0 +1,60 @@
+﻿@model IEnumerable<mvcvize.Models.ogrenciler>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Öğrenci Listesi</h2>
+
+<p>
+    @Html.ActionLink("Öğrenci Ekle", "Create", "ogrenciler")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ogrenciad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ogrencino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ogrencibolum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ogrencipuan)
+        </th>
+        <th></th>
+    </tr>
+
+
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ogrenciad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ogrencino)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ogrencibolum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ogrencipuan)
+                </td>
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit","Ogrenciler", new { id = item.Id }, null) |
+                    @Html.ActionLink("Detaylar", "Details", "Ogrenciler", new { id = item.Id }, null) |
+                    @Html.ActionLink("Sil", "Delete", "Ogrenciler", new { id = item.Id }, null)
+                </td>
+            </tr>
+        }
+     }
+
+      else
+         {
+            <p>Veri bulunamadı.</p>
+         }
+</table>

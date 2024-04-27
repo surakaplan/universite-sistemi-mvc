@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="akademisyenler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="akademisyenad" Type="varchar" MaxLength="50" />
+          <Property Name="akademisyensoyad" Type="varchar" MaxLength="50" />
+          <Property Name="akademisyenbolum" Type="varchar" MaxLength="50" />
+          <Property Name="akademisyenbaslangic" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="birimler">
+          <Key>
+            <PropertyRef Name="birimid" />
+          </Key>
+          <Property Name="birimid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="birimad" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="mezunlar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mezunad" Type="varchar" MaxLength="50" />
+          <Property Name="mezunbolum" Type="varchar" MaxLength="50" />
+          <Property Name="mezunpuan" Type="int" />
+        </EntityType>
+        <EntityType Name="ogrenciler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ogrenciad" Type="varchar" MaxLength="50" />
+          <Property Name="ogrencino" Type="int" />
+          <Property Name="ogrencibolum" Type="varchar" MaxLength="50" />
+          <Property Name="ogrencipuan" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="personel">
+          <Key>
+            <PropertyRef Name="personelid" />
+          </Key>
+          <Property Name="personelid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="personelad" Type="varchar" MaxLength="50" />
+          <Property Name="personelsoyad" Type="varchar" MaxLength="50" />
+          <Property Name="birim" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="raporlar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="raporkonu" Type="varchar" MaxLength="50" />
+          <Property Name="raporicerik" Type="varchar(max)" />
+        </EntityType>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="akademisyenler" EntityType="Self.akademisyenler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="birimler" EntityType="Self.birimler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mezunlar" EntityType="Self.mezunlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ogrenciler" EntityType="Self.ogrenciler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="personel" EntityType="Self.personel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="raporlar" EntityType="Self.raporlar" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ogrenciler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ogrenciad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ogrencino" Type="Int32" />
+          <Property Name="ogrencibolum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ogrencipuan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ogrenciler" EntityType="Self.ogrenciler" />
+          <EntitySet Name="akademisyenler" EntityType="Database1Model.akademisyenler" />
+          <EntitySet Name="birimler" EntityType="Database1Model.birimler" />
+          <EntitySet Name="personel" EntityType="Database1Model.personel" />
+          <EntitySet Name="mezunlar" EntityType="Database1Model.mezunlar" />
+          <EntitySet Name="raporlar" EntityType="Database1Model.raporlar" />
+        </EntityContainer>
+        <EntityType Name="akademisyenler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="akademisyenad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="akademisyensoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="akademisyenbolum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="akademisyenbaslangic" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="birimler">
+          <Key>
+            <PropertyRef Name="birimid" />
+          </Key>
+          <Property Name="birimid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="birimad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="personel">
+          <Key>
+            <PropertyRef Name="personelid" />
+          </Key>
+          <Property Name="personelid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="personelad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="personelsoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="birim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="mezunlar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mezunad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mezunbolum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mezunpuan" Type="Int32" />
+        </EntityType>
+        <EntityType Name="raporlar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="raporkonu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="raporicerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+          <EntitySetMapping Name="ogrenciler">
+            <EntityTypeMapping TypeName="Database1Model.ogrenciler">
+              <MappingFragment StoreEntitySet="ogrenciler">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ogrenciad" ColumnName="ogrenciad" />
+                <ScalarProperty Name="ogrencino" ColumnName="ogrencino" />
+                <ScalarProperty Name="ogrencibolum" ColumnName="ogrencibolum" />
+                <ScalarProperty Name="ogrencipuan" ColumnName="ogrencipuan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="akademisyenler">
+            <EntityTypeMapping TypeName="Database1Model.akademisyenler">
+              <MappingFragment StoreEntitySet="akademisyenler">
+                <ScalarProperty Name="akademisyenbaslangic" ColumnName="akademisyenbaslangic" />
+                <ScalarProperty Name="akademisyenbolum" ColumnName="akademisyenbolum" />
+                <ScalarProperty Name="akademisyensoyad" ColumnName="akademisyensoyad" />
+                <ScalarProperty Name="akademisyenad" ColumnName="akademisyenad" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="birimler">
+            <EntityTypeMapping TypeName="Database1Model.birimler">
+              <MappingFragment StoreEntitySet="birimler">
+                <ScalarProperty Name="birimad" ColumnName="birimad" />
+                <ScalarProperty Name="birimid" ColumnName="birimid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="personel">
+            <EntityTypeMapping TypeName="Database1Model.personel">
+              <MappingFragment StoreEntitySet="personel">
+                <ScalarProperty Name="birim" ColumnName="birim" />
+                <ScalarProperty Name="personelsoyad" ColumnName="personelsoyad" />
+                <ScalarProperty Name="personelad" ColumnName="personelad" />
+                <ScalarProperty Name="personelid" ColumnName="personelid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mezunlar">
+            <EntityTypeMapping TypeName="Database1Model.mezunlar">
+              <MappingFragment StoreEntitySet="mezunlar">
+                <ScalarProperty Name="mezunpuan" ColumnName="mezunpuan" />
+                <ScalarProperty Name="mezunbolum" ColumnName="mezunbolum" />
+                <ScalarProperty Name="mezunad" ColumnName="mezunad" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="raporlar">
+            <EntityTypeMapping TypeName="Database1Model.raporlar">
+              <MappingFragment StoreEntitySet="raporlar">
+                <ScalarProperty Name="raporicerik" ColumnName="raporicerik" />
+                <ScalarProperty Name="raporkonu" ColumnName="raporkonu" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

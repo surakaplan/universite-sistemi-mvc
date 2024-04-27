@@ -1,0 +1,51 @@
+﻿@model mvcvize.Models.akademisyenler
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detaylar</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.akademisyenad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.akademisyenad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.akademisyensoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.akademisyensoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.akademisyenbolum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.akademisyenbolum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.akademisyenbaslangic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.akademisyenbaslangic)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <br />
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Listeye geri dön", "Index")
+</p>

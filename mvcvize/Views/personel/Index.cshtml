@@ -1,0 +1,44 @@
+﻿@model IEnumerable<mvcvize.Models.personel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Personel Listesi</h2>
+
+<p>
+    @Html.ActionLink("Yeni Personel", "Create","personel")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.personelad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.personelsoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.birim)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.personelad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.personelsoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.birim)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", "Personel", new { id = item.personelid }, null) |
+            @Html.ActionLink("Detaylar", "Details", "Personel", new { id = item.personelid }, null) |
+            @Html.ActionLink("Sil", "Delete", "Personel" ,new { id = item.personelid } , null)
+        </td>
+    </tr>
+}
+
+</table>

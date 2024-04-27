@@ -1,0 +1,50 @@
+﻿@model mvcvize.Models.ogrenciler
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h4>Öğrenci Detay</h4>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ogrenciad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ogrenciad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ogrencino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ogrencino)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ogrencibolum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ogrencibolum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ogrencipuan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ogrencipuan)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Listeye geri dön", "Index")
+</p>

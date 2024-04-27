@@ -1,0 +1,70 @@
+﻿@model mvcvize.Models.ogrenciler
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Düzenleme</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ogrenciad, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.ogrenciad, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(model => model.ogrenciad, new { @class = "form-control", Placeholder = "Ad Soyad", Required = "" })
+                @Html.ValidationMessageFor(model => model.ogrenciad, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ogrencino, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.ogrencino, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(model => model.ogrencino, new { @class = "form-control", Placeholder = "Öğrenci No", Required = "" })
+                @Html.ValidationMessageFor(model => model.ogrencino, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ogrencibolum, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.ogrencibolum, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(model => model.ogrencibolum, new { @class = "form-control", Placeholder = "Bölüm", Required = "" })
+                @Html.ValidationMessageFor(model => model.ogrencibolum, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ogrencipuan, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.ogrencipuan, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(model => model.ogrencipuan, new { @class = "form-control", Placeholder = "Puan", Required = "" })
+                @Html.ValidationMessageFor(model => model.ogrencipuan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Güncelle" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+<br />
+<div>
+    @Html.ActionLink("Listeye geri dön", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,59 @@
+﻿@model mvcvize.Models.akademisyenler
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Akademisyen Silme</h2>
+
+<h5>Akademisyeni silmek istediğinizden emin misiniz?</h5>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.akademisyenad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.akademisyenad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.akademisyensoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.akademisyensoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.akademisyenbolum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.akademisyenbolum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.akademisyenbaslangic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.akademisyenbaslangic)
+        </dd>
+
+    </dl>
+    <br />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-outline-danger" />
+
+        </div>
+    }
+    <br />
+    @Html.ActionLink("Listeye geri dön", "Index")
+</div>

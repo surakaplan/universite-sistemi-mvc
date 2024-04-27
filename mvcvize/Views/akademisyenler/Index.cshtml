@@ -1,0 +1,58 @@
+﻿@model IEnumerable<mvcvize.Models.akademisyenler>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Akademisyenler</h2>
+
+<p>
+    @Html.ActionLink("Yeni Akademisyen", "Create", "akademisyenler")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.akademisyenad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.akademisyensoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.akademisyenbolum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.akademisyenbaslangic)
+        </th>
+        <th></th>
+    </tr>
+
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.akademisyenad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.akademisyensoyad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.akademisyenbolum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.akademisyenbaslangic)
+                </td>
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", "Akademisyenler", new { id = item.Id }, null)|
+                    @Html.ActionLink("Detaylar", "Details", "Akademisyenler", new { id = item.Id }, null) |
+                    @Html.ActionLink("Sil", "Delete", "Akademisyenler", new { id = item.Id }, null)
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <p>Veri bulunamadı.</p>
+    }
+</table>

@@ -1,0 +1,40 @@
+﻿@model mvcvize.Models.raporlar
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Rapor Sil</h2>
+
+<h5>Raporu silmek istediğinizden emin misiniz?</h5>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.raporkonu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.raporkonu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.raporicerik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.raporicerik)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-outline-danger" /> |
+            @Html.ActionLink("Listeye geri dön", "Index")
+        </div>
+    }
+</div>

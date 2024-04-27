@@ -1,0 +1,47 @@
+﻿@model mvcvize.Models.personel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Personel Silme</h3>
+
+<h5>Personeli silmek istediğinizden emin misiniz?</h5>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.personelad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.personelad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.personelsoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.personelsoyad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.birim)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.birim)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <br />
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-outline-danger" />
+
+        </div>
+    }
+    @Html.ActionLink("Listeye geri dön", "Index")
+</div>
